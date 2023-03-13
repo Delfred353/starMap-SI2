@@ -1,0 +1,4 @@
+[debug] [starmap-test] Classpath dependencies List()
+[debug] [starmap-test] Dependencies from configurations List(starmap)
+[debug] Bloop wrote the configuration of project 'starmap-test' to '/private/student/r/er/nmerrer/Téléchargements/StarMap/.bloop/starmap-test.json'
+[success] Generated .bloop/starmap-test.json

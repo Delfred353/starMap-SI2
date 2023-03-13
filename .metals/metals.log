@@ -1,0 +1,91 @@
+2023.03.13 14:03:52 INFO  Started: Metals version 0.11.11 in workspace '/private/student/r/er/nmerrer/Téléchargements/StarMap' for client Visual Studio Code 1.75.1.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.13 14:03:53 INFO  time: initialize in 0.47s
+2023.03.13 14:03:53 WARN  Build server is not auto-connectable.
+2023.03.13 14:03:56 INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals6885985939484223537/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.03.13 14:03:56 ERROR [info] [launcher] getting org.scala-sbt sbt 1.8.2  (this may take some time)...
+2023.03.13 14:03:56 WARN  no build target for: /private/student/r/er/nmerrer/Téléchargements/StarMap/project/metals.sbt
+2023.03.13 14:03:56 WARN  no build target for: /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project/metals.sbt
+2023.03.13 14:03:56 INFO  skipping build import with status 'Started'
+2023.03.13 14:03:59 INFO  no build target found for /private/student/r/er/nmerrer/Téléchargements/StarMap/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.2.2
+2023.03.13 14:04:05 ERROR [info] [launcher] getting Scala 2.12.17 (for sbt)...
+2023.03.13 14:04:06 INFO  [info] welcome to sbt 1.8.2 (Private Build Java 1.8.0_352)
+2023.03.13 14:04:08 INFO  [info] loading settings for project starmap-build-build-build from metals.sbt ...
+2023.03.13 14:04:08 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project/project
+2023.03.13 14:04:10 INFO  [info] loading settings for project starmap-build-build from metals.sbt ...
+2023.03.13 14:04:10 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project
+2023.03.13 14:04:13 INFO  [success] Generated .bloop/starmap-build-build.json
+2023.03.13 14:04:13 INFO  [success] Total time: 3 s, completed 13 mars 2023 14:04:13
+2023.03.13 14:04:14 INFO  [info] loading settings for project starmap-build from metals.sbt,plugins.sbt ...
+2023.03.13 14:04:14 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project
+2023.03.13 14:04:15 INFO  [success] Generated .bloop/starmap-build.json
+2023.03.13 14:04:17 INFO  [success] Total time: 3 s, completed 13 mars 2023 14:04:17
+2023.03.13 14:04:20 INFO  [info] loading settings for project starmap from build.sbt ...
+2023.03.13 14:04:20 INFO  [info] set current project to StarMap (in build file:/private/student/r/er/nmerrer/Téléchargements/StarMap/)
+2023.03.13 14:04:21 INFO  [success] Generated .bloop/starmap-test.json
+2023.03.13 14:04:21 INFO  [success] Generated .bloop/starmap.json
+2023.03.13 14:04:21 INFO  [success] Total time: 2 s, completed 13 mars 2023 14:04:22
+2023.03.13 14:04:22 INFO  time: ran 'sbt bloopInstall' in 26s
+2023.03.13 14:04:22 INFO  Attempting to connect to the build server...
+2023.03.13 14:04:22 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:04:22 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:04:22 INFO  Attempting to connect to the build server...
+2023.03.13 14:04:22 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:04:22 INFO  Attempting to connect to the build server...
+2023.03.13 14:04:22 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:04:22 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/project/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:04:23 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:04:23 INFO  time: Connected to build server in 0.98s
+2023.03.13 14:04:23 INFO  Connected to Build server: Bloop v1.5.6
+2023.03.13 14:04:25 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:04:32 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:04:32 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:04:32 INFO  time: indexed workspace in 8.96s
+mars 13, 2023 2:05:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+mars 13, 2023 2:05:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFOS: Unsupported notification method: $/setTrace
+2023.03.13 14:05:31 INFO  running '/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /tmp/metals157571884042048188/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.03.13 14:05:32 INFO  [info] welcome to sbt 1.8.2 (Private Build Java 1.8.0_352)
+2023.03.13 14:05:32 INFO  [info] loading settings for project starmap-build-build-build from metals.sbt ...
+2023.03.13 14:05:33 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project/project
+2023.03.13 14:05:34 INFO  [info] loading settings for project starmap-build-build from metals.sbt ...
+2023.03.13 14:05:34 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project
+2023.03.13 14:05:35 INFO  [success] Generated .bloop/starmap-build-build.json
+2023.03.13 14:05:35 INFO  [success] Total time: 1 s, completed 13 mars 2023 14:05:35
+2023.03.13 14:05:35 INFO  [info] loading settings for project starmap-build from metals.sbt,plugins.sbt ...
+2023.03.13 14:05:35 INFO  [info] loading project definition from /private/student/r/er/nmerrer/Téléchargements/StarMap/project
+2023.03.13 14:05:35 INFO  [success] Generated .bloop/starmap-build.json
+2023.03.13 14:05:36 INFO  [success] Total time: 1 s, completed 13 mars 2023 14:05:36
+2023.03.13 14:05:36 INFO  [info] loading settings for project starmap from build.sbt ...
+2023.03.13 14:05:36 INFO  [info] set current project to StarMap (in build file:/private/student/r/er/nmerrer/Téléchargements/StarMap/)
+2023.03.13 14:05:36 INFO  [success] Generated .bloop/starmap.json
+2023.03.13 14:05:36 INFO  [success] Generated .bloop/starmap-test.json
+2023.03.13 14:05:36 INFO  [success] Total time: 0 s, completed 13 mars 2023 14:05:37
+2023.03.13 14:05:37 INFO  time: ran 'sbt bloopInstall' in 6.76s
+2023.03.13 14:05:37 INFO  Disconnecting from Bloop session...
+2023.03.13 14:05:37 INFO  Shut down connection with build server.
+2023.03.13 14:05:37 INFO  Shut down connection with build server.
+2023.03.13 14:05:37 INFO  Shut down connection with build server.
+2023.03.13 14:05:37 INFO  Attempting to connect to the build server...
+2023.03.13 14:05:37 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:05:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:05:37 INFO  Attempting to connect to the build server...
+2023.03.13 14:05:37 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:05:37 INFO  Attempting to connect to the build server...
+2023.03.13 14:05:37 INFO  Bloop uses /usr/lib/jvm/java-8-openjdk-amd64 defined at /private/student/r/er/nmerrer/.bloop/bloop.json
+2023.03.13 14:05:37 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/project/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:05:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /private/student/r/er/nmerrer/Téléchargements/StarMap/project/project/.metals/bsp.trace.json or /private/student/r/er/nmerrer/.cache/metals/bsp.trace.json
+2023.03.13 14:05:38 INFO  time: Connected to build server in 0.13s
+2023.03.13 14:05:38 INFO  Connected to Build server: Bloop v1.5.6
+2023.03.13 14:05:38 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:05:38 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:05:38 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/src.zip, /usr/lib/jvm/java-8-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2023.03.13 14:05:38 INFO  time: indexed workspace in 0.48s
+2023.03.13 14:05:50 INFO  compiling starmap (19 scala sources)
+2023.03.13 14:05:56 INFO  time: compiled starmap in 6.26s
