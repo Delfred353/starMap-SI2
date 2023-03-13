@@ -236,8 +236,18 @@ object ExosActionsBoutons {
    *   - suggestion : utiliser les fonctions ExosOverlays.concatOverlay,
    *     ExosLignes.overlayLigne, ExosArrets.overlayStops
    */
-  def cliquerMaLigne(state: UIState, id: String): UIState =
-    initialState // TODO
+  def cliquerMaLigne(state: UIState, id: String): UIState = {
+    initialState
+    /*ExosLignes.trouverLigneId(
+      id,
+      allLines
+    )
+    UIState(
+      overlay: Overlay,
+      fromTo: (Option[Geo], Option[Geo]),
+      message: String
+    )*/
+  } // TODO
 
   /**
    * @param state

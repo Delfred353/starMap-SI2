@@ -9886,3 +9886,91 @@ AVERTISSEMENT: Unmatched cancel notification for request id 2453
 2023.03.13 15:50:02 INFO  time: compiled starmap in 0.28s
 2023.03.13 15:50:27 INFO  compiling starmap (1 scala source)
 2023.03.13 15:50:28 INFO  time: compiled starmap in 1.05s
+2023.03.13 15:56:31 INFO  compiling starmap (1 scala source)
+2023.03.13 15:56:31 INFO  time: compiled starmap in 0.3s
+2023.03.13 15:56:58 INFO  compiling starmap (1 scala source)
+2023.03.13 15:56:58 INFO  time: compiled starmap in 0.3s
+2023.03.13 15:57:03 INFO  compiling starmap (1 scala source)
+2023.03.13 15:57:03 INFO  time: compiled starmap in 0.3s
+2023.03.13 15:57:25 INFO  compiling starmap (1 scala source)
+2023.03.13 15:57:25 INFO  time: compiled starmap in 0.3s
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:15 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:18 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:246:7: stale bloop error: package starmap.model.overlay is not a value
+      overlay: Overlay,
+      ^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:247:7: stale bloop error: Not found: fromTo
+      fromTo: (Option[Geo], Option[Geo]),
+      ^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:248:7: stale bloop error: Found:    ((Option[starmap.model.Geo], Option[starmap.model.Geo])) => String
+Required: String
+      message: String
+      ^^^^^^^
+2023.03.13 15:59:27 INFO  file:///private/student/r/er/nmerrer/T%C3%A9l%C3%A9chargements/StarMap/src/main/scala/starmap/app/Exercices.scala:240:5: stale bloop warning: A pure expression does nothing in statement position; you may be omitting necessary parentheses
+    initialState
+    ^^^^^^^^^^^^
+2023.03.13 15:59:32 INFO  compiling starmap (1 scala source)
+2023.03.13 15:59:32 INFO  time: compiled starmap in 0.35s
