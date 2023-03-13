@@ -142,7 +142,17 @@ object ExosLignes {
   def trouverLigneId(
       id: String,
       lines: List[Line]
-  ): Option[Line] = None // TODO
+  ): Option[Line] = {
+    lines match {
+      case Nil => None
+      case head :: next =>
+        if (head.id.equals(id)) {
+          Option(head)
+        } else {
+          trouverLigneId(id, next)
+        }
+    }
+  } // TODO
 
   /**
    * @param line
@@ -153,8 +163,10 @@ object ExosLignes {
    * @note
    *   indication de longueur : 1 ligne
    */
-  def overlayLigne(line: Line): Overlay =
-    Nothing // TODO
+  def overlayLigne(line: Line): Overlay = {
+    ShapeGroupLayer(true, List(line.parcours), Nothing)
+  }
+  // TODO
 
   /**
    * @param lines
@@ -318,7 +330,15 @@ object ExosOverlays {
   def concatOverlay(
       above: Overlay,
       under: Overlay
-  ): Overlay = Nothing // TODO
+  ): Overlay = {
+    above match {
+      case Nothing => under
+      case ShapeGroupLayer(bool: Boolean, chemin: List[Shape], Nothing) =>
+        ShapeGroupLayer(bool, chemin, under)
+      case ShapeGroupLayer(bool: Boolean, chemin: List[Shape], o: Overlay) =>
+        ShapeGroupLayer(bool, chemin, concatOverlay(o, under))
+    }
+  } // TODO
 
   /**
    * @param overlay

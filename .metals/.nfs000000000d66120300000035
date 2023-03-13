@@ -9852,3 +9852,37 @@ AVERTISSEMENT: Unmatched cancel notification for request id 1524
 2023.03.13 15:25:18 INFO  compiling starmap (1 scala source)
 2023.03.13 15:25:19 WARN  Could not load snapshot text for /private/student/r/er/nmerrer/Téléchargements/StarMap/src/main/scala/starmap/app/Exercices.scala
 2023.03.13 15:25:18 INFO  time: compiled starmap in 0.39s
+mars 13, 2023 3:33:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVERTISSEMENT: Unmatched cancel notification for request id 2453
+2023.03.13 15:38:17 ERROR scalafmt: /private/student/r/er/nmerrer/Téléchargements/StarMap/src/main/scala/starmap/app/Exercices.scala:166: error: [dialect scala3] ) expected but ( found
+    ShapeGroupLayer(true, shapes: List(line.parcours), next: Overlay)
+                                      ^
+2023.03.13 15:38:18 INFO  compiling starmap (1 scala source)
+2023.03.13 15:38:18 INFO  time: compiled starmap in 0.16s
+2023.03.13 15:38:36 INFO  compiling starmap (1 scala source)
+2023.03.13 15:38:36 INFO  time: compiled starmap in 0.16s
+2023.03.13 15:38:47 INFO  compiling starmap (1 scala source)
+2023.03.13 15:38:47 INFO  time: compiled starmap in 0.33s
+2023.03.13 15:42:26 ERROR scalafmt: /private/student/r/er/nmerrer/Téléchargements/StarMap/src/main/scala/starmap/app/Exercices.scala:336: error: [dialect scala3] illegal start of simple pattern
+    }
+    ^
+2023.03.13 15:42:26 INFO  compiling starmap (1 scala source)
+2023.03.13 15:42:26 INFO  time: compiled starmap in 0.55s
+2023.03.13 15:43:26 INFO  compiling starmap (1 scala source)
+2023.03.13 15:43:26 INFO  time: compiled starmap in 0.33s
+2023.03.13 15:44:40 INFO  compiling starmap (1 scala source)
+2023.03.13 15:44:40 INFO  time: compiled starmap in 0.28s
+2023.03.13 15:46:53 INFO  compiling starmap (1 scala source)
+2023.03.13 15:46:53 INFO  time: compiled starmap in 0.42s
+2023.03.13 15:47:37 INFO  compiling starmap (1 scala source)
+2023.03.13 15:47:37 INFO  time: compiled starmap in 0.38s
+2023.03.13 15:47:59 INFO  compiling starmap (1 scala source)
+2023.03.13 15:47:59 INFO  time: compiled starmap in 0.55s
+2023.03.13 15:48:30 INFO  compiling starmap (1 scala source)
+2023.03.13 15:48:30 INFO  time: compiled starmap in 0.2s
+2023.03.13 15:49:25 INFO  compiling starmap (1 scala source)
+2023.03.13 15:49:25 INFO  time: compiled starmap in 0.23s
+2023.03.13 15:50:02 INFO  compiling starmap (1 scala source)
+2023.03.13 15:50:02 INFO  time: compiled starmap in 0.28s
+2023.03.13 15:50:27 INFO  compiling starmap (1 scala source)
+2023.03.13 15:50:28 INFO  time: compiled starmap in 1.05s
