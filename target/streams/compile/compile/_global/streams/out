@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: /private/student/r/er/nmerrer/Téléchargements/StarMap/src/main/scala/starmap/app/Exercices.scala:99:20 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m99 |[0m      Path(allLines._1.parcours, Color.BLUE),[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m           ^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m           value _1 is not a member of List[starmap.model.route.Line][0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

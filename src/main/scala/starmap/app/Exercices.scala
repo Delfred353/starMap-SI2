@@ -36,9 +36,6 @@ import org.mapsforge.core.util.LatLongUtils
 import java.awt.Color
 import starmap.lib.Carte.showOverlay
 
-
-
-
 import starmap.lib.*
 import starmap.model.*
 import starmap.model.overlay.*
@@ -95,9 +92,9 @@ object ExosGeoFormes {
    *   votre définition doit être une expression unique, tenant sur une ligne,
    *   sans création de valeur intermédiaire.
    */
-  
+
   val parcoursLigne0: Overlay =
-    Nothing // TODO 
+    ShapeGroupLayer(true, List(allLines.head.parcours), Nothing)
 
 }
 
@@ -121,7 +118,14 @@ object ExosLignes {
    */
   def nomsDesLignes(
       lines: List[Line]
-  ): List[(String, String, String)] = List() // TODO 
+  ): List[(String, String, String)] = {
+    lines match {
+      case Nil => Nil
+      case head :: rest =>
+        (head.id, head.name, head.libelle) :: nomsDesLignes(rest)
+
+    }
+  }
 
   /**
    * @param id
@@ -134,11 +138,11 @@ object ExosLignes {
    *   - utiliser pattern matching et récursion
    *   - indication de longueur : environ 5 lignes
    */
-  
+
   def trouverLigneId(
       id: String,
       lines: List[Line]
-  ): Option[Line] = None // TODO 
+  ): Option[Line] = None // TODO
 
   /**
    * @param line
@@ -150,7 +154,7 @@ object ExosLignes {
    *   indication de longueur : 1 ligne
    */
   def overlayLigne(line: Line): Overlay =
-    Nothing // TODO 
+    Nothing // TODO
 
   /**
    * @param lines
@@ -162,7 +166,7 @@ object ExosLignes {
    *   - utiliser pattern matching et récursion
    *   - indication de longueur : environ 5 lignes
    */
-  def overlayLignes(lines: List[Line]): Overlay = Nothing // TODO 
+  def overlayLignes(lines: List[Line]): Overlay = Nothing // TODO
 
 }
 
@@ -221,7 +225,7 @@ object ExosActionsBoutons {
    *     ExosLignes.overlayLigne, ExosArrets.overlayStops
    */
   def cliquerMaLigne(state: UIState, id: String): UIState =
-    initialState // TODO 
+    initialState // TODO
 
   /**
    * @param state
@@ -237,7 +241,7 @@ object ExosActionsBoutons {
    *     ExosLignes.overlayLignes
    */
   def cliquerToutesLesLignes(state: UIState): UIState =
-    initialState // TODO 
+    initialState // TODO
 
   /**
    * @param fromTo
@@ -253,7 +257,7 @@ object ExosActionsBoutons {
    *     fichier.
    */
   def message(fromTo: (Option[Geo], Option[Geo])): String =
-    """<html><p style="color:blue;">Message à définir</p></html>""" // TODO 
+    """<html><p style="color:blue;">Message à définir</p></html>""" // TODO
   /**
    * @param state
    *   l'état courant de l'interface graphique
@@ -272,7 +276,7 @@ object ExosActionsBoutons {
    *   - indication de longueur : moins de 10 lignes
    */
   def cliquerCarte(state: UIState, p: Geo, c: Click): UIState =
-    initialState // TODO 
+    initialState // TODO
 
   /**
    * @param state
@@ -292,7 +296,7 @@ object ExosActionsBoutons {
    *   - utiliser ExosRoutes.searchItin, ExosRoutes.overlayRoute,
    *     ExosRoutes.optionRouteInstructions, ExosOverlays.clearAllItineraries
    */
-  def cliquerRechercher(state: UIState): UIState = initialState // TODO 
+  def cliquerRechercher(state: UIState): UIState = initialState // TODO
 
 }
 
@@ -314,7 +318,7 @@ object ExosOverlays {
   def concatOverlay(
       above: Overlay,
       under: Overlay
-  ): Overlay = Nothing // TODO 
+  ): Overlay = Nothing // TODO
 
   /**
    * @param overlay
@@ -325,8 +329,8 @@ object ExosOverlays {
    *   - indication de longueur : environ 5 lignes
    *   - utiliser le pattern matching et la récursion
    */
-  
-  def clearAllItineraries(overlay: Overlay): Overlay = Nothing // TODO 
+
+  def clearAllItineraries(overlay: Overlay): Overlay = Nothing // TODO
 }
 
 object ExosArrets {
@@ -341,12 +345,11 @@ object ExosArrets {
    *   - utiliser peut-être une fonction auxiliaire, le pattern matching et la
    *     récursion
    */
-  def overlayStops(stops: List[Stop]): Overlay = Nothing // TODO 
+  def overlayStops(stops: List[Stop]): Overlay = Nothing // TODO
 }
 
 object ExosRoutes {
 
-  
   /**
    * @param route
    *   un itinéraire quelconque
@@ -356,7 +359,7 @@ object ExosRoutes {
    *   C'est une fonction difficile à implémenter. Procédez par étapes en
    *   commençant par des itinéraires simples.
    */
-  def overlayRoute(route: Route): Overlay = Nothing // TODO 
+  def overlayRoute(route: Route): Overlay = Nothing // TODO
 
   /**
    * @param optRoute
@@ -366,9 +369,7 @@ object ExosRoutes {
    *   l'interface graphique
    */
   def optionRouteInstructions(optRoute: Option[Route]): List[String] =
-    List() // TODO 
-
-  
+    List() // TODO
 
   /**
    * @param start
@@ -382,5 +383,5 @@ object ExosRoutes {
    * @note
    *   Bien lire les conseils donnés dans l'énoncé accompagnant ce projet.
    */
-  def searchItin(start: Geo, end: Geo): Option[Route] = ??? // TODO 
+  def searchItin(start: Geo, end: Geo): Option[Route] = ??? // TODO
 }

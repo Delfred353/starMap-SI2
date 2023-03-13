@@ -1,0 +1,40 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 100 products, 19 sources, 6 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/starmap/model/route/Route.scala, ${BASE}/src/main/scala/starmap/lib/Util.scala, ${BASE}/src/main/scala/starmap/model/ui/Click.scala, ${BASE}/src/main/scala/starmap/app/Exercices.scala, ${BASE}/src/main/scala/starmap/lib/OpenStreetMapMapnik.scala, ${BASE}/src/main/scala/starmap/model/route/Line.scala, ${BASE}/src/main/scala/starmap/app/StarMap.scala, ${BASE}/src/main/scala/starmap/model/ui/UIState.scala, ${BASE}/src/main/scala/starmap/lib/CSVreader.scala, ${BASE}/src/main/scala/starmap/model/overlay/Overlay.scala, ${BASE}/src/main/scala/starmap/model/geo.scala, ${BASE}/src/main/scala/starmap/lib/CSV.scala, ${BASE}/src/main/scala/starmap/lib/Carte.scala, ${BASE}/src/main/scala/starmap/model/route/Stop.scala, ${BASE}/src/main/scala/starmap/lib/TileSource.scala, ${BASE}/src/main/scala/starmap/lib/Settings.scala, ${BASE}/src/main/scala/starmap/lib/MState.scala, ${BASE}/src/main/scala/starmap/model/overlay/Shape.scala, ${BASE}/src/main/scala/starmap/lib/GUIComponents.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/starmap/app/Exercices.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/starmap/app/Exercices.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(starmap.app.ExosActionsBoutons, starmap.app.ExosGeoFormes, starmap.app.ExosLignes, starmap.app.ExosRoutes, starmap.app.Exercices$package, starmap.app.ExosOverlays, starmap.app.ExosArrets)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(starmap.app.ExosActionsBoutons, starmap.app.ExosGeoFormes, starmap.app.ExosLignes, starmap.app.ExosRoutes, starmap.app.Exercices$package, starmap.app.ExosOverlays, starmap.app.ExosArrets)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/starmap/app/Exercices.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: starmap.app.ExosActionsBoutons, starmap.app.ExosGeoFormes, starmap.app.ExosLignes, starmap.app.ExosRoutes, starmap.app.Exercices$package, starmap.app.ExosOverlays, starmap.app.ExosArrets[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /private/student/r/er/nmerrer/Téléchargements/StarMap/target/scala-3.2.0/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mReturning already retrieved and compiled bridge: /private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-sbt-bridge/3.2.0/scala3-sbt-bridge-3.2.0.jar.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 750a1f37 for Scala Compiler version 3.2.0[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-unchecked[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-deprecation[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.2.0/scala3-library_3-3.2.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.8/scala-library-2.13.8.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/private/student/r/er/nmerrer/Téléchargements/StarMap/target/scala-3.2.0/classes:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/sbt/junit-interface/0.13.3/junit-interface-0.13.3.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/net/minidev/json-smart/2.4.8/json-smart-2.4.8.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/mapsforge/mapsforge-map-awt/0.18.0/mapsforge-map-awt-0.18.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/net/minidev/accessors-smart/2.4.8/accessors-smart-2.4.8.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/mapsforge/mapsforge-map-reader/0.18.0/mapsforge-map-reader-0.18.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/com/formdev/svgSalamander/1.1.3/svgSalamander-1.1.3.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/ow2/asm/asm/9.1/asm-9.1.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/mapsforge/mapsforge-map/0.18.0/mapsforge-map-0.18.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/org/mapsforge/mapsforge-core/0.18.0/mapsforge-core-0.18.0.jar:/private/student/r/er/nmerrer/.cache/coursier/v1/https/repo1.maven.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 2.334990574 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
+[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m

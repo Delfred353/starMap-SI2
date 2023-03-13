@@ -40,5 +40,5 @@ object StarMap extends App {
   showShape(Circle(istic, Color.GREEN))
   showShape(ExosGeoFormes.chemin1)
   showShape(ExosGeoFormes.chemin2)
-
+  showOverlay(ExosGeoFormes.parcoursLigne0)
 }

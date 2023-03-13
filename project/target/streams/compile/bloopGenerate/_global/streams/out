@@ -1,4 +1,4 @@
-[debug] [starmap-si2-build] Classpath dependencies List()
-[debug] [starmap-si2-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'starmap-si2-build' to '/workspaces/starMap-SI2/project/.bloop/starmap-si2-build.json'
-[success] Generated .bloop/starmap-si2-build.json
+[0m[[0m[0mdebug[0m] [0m[0m[starmap-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[starmap-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'starmap-build' to '/private/student/r/er/nmerrer/Téléchargements/StarMap/project/.bloop/starmap-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/starmap-build.json[0m
