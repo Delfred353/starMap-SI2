@@ -152,7 +152,7 @@ object ExosLignes {
           trouverLigneId(id, next)
         }
     }
-  } // TODO
+  } 
 
   /**
    * @param line
@@ -166,7 +166,7 @@ object ExosLignes {
   def overlayLigne(line: Line): Overlay = {
     ShapeGroupLayer(true, List(line.parcours), Nothing)
   }
-  // TODO
+  
 
   /**
    * @param lines
@@ -178,7 +178,12 @@ object ExosLignes {
    *   - utiliser pattern matching et récursion
    *   - indication de longueur : environ 5 lignes
    */
-  def overlayLignes(lines: List[Line]): Overlay = Nothing // TODO
+  def overlayLignes(lines: List[Line]): Overlay = {
+    lines match {
+      case Nil => Nothing
+      case head :: next => ShapeGroupLayer(true, head.parcours, overlayLignes(next))
+    }
+  } // TODO
 
 }
 
