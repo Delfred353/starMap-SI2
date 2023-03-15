@@ -365,7 +365,12 @@ object ExosOverlays {
    *   - utiliser le pattern matching et la récursion
    */
 
-  def clearAllItineraries(overlay: Overlay): Overlay = Nothing // TODO
+  def clearAllItineraries(overlay: Overlay): Overlay = {
+    overlay match {
+      case Nothing => Nothing
+      case ShapeGroupLayer(_,shape, o) => ShapeGroupLayer(false,shape, clearAllItineraries(o))
+    }
+  } // TODO
 }
 
 object ExosArrets {
