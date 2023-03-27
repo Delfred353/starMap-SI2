@@ -41,6 +41,9 @@ import starmap.model.*
 import starmap.model.overlay.*
 import starmap.model.route.*
 import starmap.model.ui.*
+import starmap.app.ExosLignes.overlayLignes
+import starmap.app.ExosOverlays.concatOverlay
+import starmap.app.ExosArrets.overlayStops
 
 /** Lignes et arrêts de bus, obtenus à partir des fichiers csv fournis. */
 val (allLines, allStops): (List[Line], List[Stop]) = CSV.buildLinesAndStops()
@@ -152,7 +155,7 @@ object ExosLignes {
           trouverLigneId(id, next)
         }
     }
-  } 
+  }
 
   /**
    * @param line
@@ -166,7 +169,6 @@ object ExosLignes {
   def overlayLigne(line: Line): Overlay = {
     ShapeGroupLayer(true, List(line.parcours), Nothing)
   }
-  
 
   /**
    * @param lines
@@ -181,9 +183,10 @@ object ExosLignes {
   def overlayLignes(lines: List[Line]): Overlay = {
     lines match {
       case Nil => Nothing
-      case head :: next => ShapeGroupLayer(true, head.parcours, overlayLignes(next))
+      case head :: next =>
+        ShapeGroupLayer(true, List(head.parcours), overlayLignes(next))
     }
-  } // TODO
+  }
 
 }
 
@@ -242,17 +245,22 @@ object ExosActionsBoutons {
    *     ExosLignes.overlayLigne, ExosArrets.overlayStops
    */
   def cliquerMaLigne(state: UIState, id: String): UIState = {
-    initialState
-    /*ExosLignes.trouverLigneId(
-      id,
-      allLines
-    )
-    UIState(
-      overlay: Overlay,
-      fromTo: (Option[Geo], Option[Geo]),
-      message: String
-    )*/
-  } // TODO
+
+    val ligne: Option[Line] = ExosLignes.trouverLigneId(id, allLines)
+    ligne match {
+      case None => state
+      case Some(l): Option[Line] =>
+        val newOverlay = ExosOverlays.concatOverlay(
+          ExosLignes.overlayLigne(l),
+          ExosArrets.overlayStops(l.stops)
+        )
+        UIState(
+          newOverlay,
+          (Some(l.stops.head.coord), Some(l.stops.last.coord)),
+          """<html><p style="color:blue;"> Ligne selectionnée affichée </p><html>"""
+        )
+    }
+  }
 
   /**
    * @param state
@@ -267,8 +275,15 @@ object ExosActionsBoutons {
    *   - utiliser ExosOverlays.concatOverlay, ExosArrets.overlayStops,
    *     ExosLignes.overlayLignes
    */
-  def cliquerToutesLesLignes(state: UIState): UIState =
-    initialState // TODO
+  def cliquerToutesLesLignes(state: UIState): UIState = {
+    val overlayTousLignesStops: Overlay =
+      concatOverlay(overlayLignes(allLines), overlayStops(allStops))
+    UIState(
+      overlayTousLignesStops,
+      (None, None),
+      """<html><p style="color:blue;"> Toutes les lignes affichées </p><html>"""
+    )
+  }
 
   /**
    * @param fromTo
@@ -283,8 +298,15 @@ object ExosActionsBoutons {
    *   - les chaines MSG_SELECT_0 à MSG_SELECT_3 sont définies au début de ce
    *     fichier.
    */
-  def message(fromTo: (Option[Geo], Option[Geo])): String =
-    """<html><p style="color:blue;">Message à définir</p></html>""" // TODO
+  def message(fromTo: (Option[Geo], Option[Geo])): String = {
+    fromTo match {
+      case (None, None) => MSG_SELECT_0
+      case (_, None)    => MSG_SELECT_1
+      case (None, _)    => MSG_SELECT_2
+      case (_, _)       => MSG_SELECT_3
+    }
+  }
+
   /**
    * @param state
    *   l'état courant de l'interface graphique
@@ -302,8 +324,17 @@ object ExosActionsBoutons {
    * @note
    *   - indication de longueur : moins de 10 lignes
    */
-  def cliquerCarte(state: UIState, p: Geo, c: Click): UIState =
-    initialState // TODO
+  def cliquerCarte(state: UIState, p: Geo, c: Click): UIState = {
+    c match {
+      case Cancel => state
+      case StartDef =>
+        val (a, b): (Option[Geo], Option[Geo]) = state.fromTo
+        UIState(state.overlay, (Some(p), b), message(Some(p), b))
+      case EndDef =>
+        val (a, b): (Option[Geo], Option[Geo]) = state.fromTo
+        UIState(state.overlay, (a, Some(p)), message(a, Some(p)))
+    }
+  }
 
   /**
    * @param state
@@ -353,7 +384,7 @@ object ExosOverlays {
       case ShapeGroupLayer(bool: Boolean, chemin: List[Shape], o: Overlay) =>
         ShapeGroupLayer(bool, chemin, concatOverlay(o, under))
     }
-  } // TODO
+  }
 
   /**
    * @param overlay
@@ -368,9 +399,10 @@ object ExosOverlays {
   def clearAllItineraries(overlay: Overlay): Overlay = {
     overlay match {
       case Nothing => Nothing
-      case ShapeGroupLayer(_,shape, o) => ShapeGroupLayer(false,shape, clearAllItineraries(o))
+      case ShapeGroupLayer(_, shape, o) =>
+        ShapeGroupLayer(false, shape, clearAllItineraries(o))
     }
-  } // TODO
+  }
 }
 
 object ExosArrets {
@@ -385,7 +417,22 @@ object ExosArrets {
    *   - utiliser peut-être une fonction auxiliaire, le pattern matching et la
    *     récursion
    */
-  def overlayStops(stops: List[Stop]): Overlay = Nothing // TODO
+  def overlayStops(stops: List[Stop]): Overlay = {
+    ShapeGroupLayer(
+      true,
+      stopsToShapes(stops),
+      Nothing
+    )
+
+  }
+
+  def stopsToShapes(stops: List[Stop]): List[Shape] = {
+    stops match
+      case Nil => Nil
+      case head :: next =>
+        Circle(head.coord, Color.BLUE) :: stopsToShapes(next)
+
+  }
 }
 
 object ExosRoutes {
@@ -399,7 +446,25 @@ object ExosRoutes {
    *   C'est une fonction difficile à implémenter. Procédez par étapes en
    *   commençant par des itinéraires simples.
    */
-  def overlayRoute(route: Route): Overlay = Nothing // TODO
+  def overlayRoute(route: Route): Overlay = {
+    route match {
+      case End(end) => ShapeGroupLayer(true, List(EndPin(end.coord)), Nothing)
+      case Walk(start, End(end)) =>
+        ShapeGroupLayer(
+          true,
+          List(Path(List(start.coord, end.coord), Color.RED)),
+          Nothing
+        )
+      case Bus(start, lineId, End(end)) =>
+        ShapeGroupLayer(
+          true,
+          List(Path(List(start.coord, end.coord), Color.RED)),
+          Nothing
+        )
+      /* case Bus(start, lineId, Walk(startW,suite)) =>
+      case Walk(start,Bus(startB,id,suite))*/
+    }
+  } // TODO
 
   /**
    * @param optRoute
