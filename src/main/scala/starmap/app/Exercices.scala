@@ -452,7 +452,7 @@ object ExosRoutes {
       case Walk(start, End(end)) =>
         ShapeGroupLayer(
           true,
-          List(Path(List(start.coord, end.coord), Color.RED)),
+          List(DottedPath(List(start.coord, end.coord), Color.RED)),
           Nothing
         )
       case Bus(start, lineId, End(end)) =>
@@ -461,10 +461,27 @@ object ExosRoutes {
           List(Path(List(start.coord, end.coord), Color.RED)),
           Nothing
         )
-      /* case Bus(start, lineId, Walk(startW,suite)) =>
-      case Walk(start,Bus(startB,id,suite))*/
+      case Bus(start, lineId, Walk(startW,suite)) => ShapeGroupLayer(
+          true,
+          List(Path(List(start.coord, startW.coord), Color.RED)),
+          overlayRoute(suite)
+        )
+      case Walk(start,Bus(startB,id,suite)) => ShapeGroupLayer(
+          true,
+          List(DottedPath(List(start.coord, startB.coord), Color.RED)),
+          overlayRoute(suite)
+        )
+        case Bus(start, lineId, Bus(startB,suite)) => ShapeGroupLayer(
+          true,
+          List(Path(List(start.coord, startB.coord), Color.RED)),
+          overlayRoute(suite)
+        )
+      case Walk(start, Walk(startW,id,suite)) => ShapeGroupLayer(
+          true,
+          List(DottedPath(List(start.coord, startW.coord), Color.RED)),
+          overlayRoute(suite) 
     }
-  } // TODO
+  } // TODO //encore à voir si ça marche
 
   /**
    * @param optRoute
@@ -473,8 +490,14 @@ object ExosRoutes {
    *   une liste d'indications textuelles décrivant l'itinéraire optRoute dans
    *   l'interface graphique
    */
-  def optionRouteInstructions(optRoute: Option[Route]): List[String] =
-    List() // TODO
+  def optionRouteInstructions(optRoute: Option[Route]): List[String] = {
+    optRoute match {
+      case None => Nil
+      case Some(End(end)) =>  """<html><p style="color:blue;"> Fin de l'itinéraire à  </p><html>""" + end :: Nil
+      case Some(Bus(start, id, suite)) => """<html><p style="color:blue;"> Monter dans le bus à  </p><html>""" + start :: optionRouteInstructions(Some(suite))
+      case Some(Walk(start, suite)) => """<html><p style="color:blue;"> Marcher à partir de  </p><html>""" + start :: optionRouteInstructions(Some(suite))
+    }
+    } // TODO + a voir si ça marche
 
   /**
    * @param start
