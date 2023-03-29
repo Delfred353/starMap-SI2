@@ -519,7 +519,9 @@ object ExosRoutes {
       case (None,None) => None
       case (_,None) => None
       case (None,_) => None
-      case (Some(stopDebut),Some(stopFin)) =>
+      case (Some(stopDebut),Some(stopFin)) => if (ligneCommune(stopDebut,stopFin).length ! = 0){
+                                                Some(Bus(arretDebutBus,End))
+      }
     }
   } // TODO
 
@@ -553,5 +555,29 @@ object ExosRoutes {
                        }
     }
    
+  }
+
+  def ligneCommune(stop1: Stop, stop2: Stop):List[String] = {
+    stop1.lineId.map((e:String) => stop2.lineId.contains(e))
+  }
+
+  def idSensBus(stopDepart: Stop, stopArrivee: Stop): List[String] = {
+     val idLignesPossibles: List[String] = ligneCommune(stopDepart,stopArrivee).map()
+     val lignesPossibles: List[Option[Line]] = idLignesPossibles.map(idToLine())
+  }
+  
+  def idToLine(id:String): Option[Line] = {
+   idSearchLine(id,allLines)
+  }
+
+  def idSearchLine(id: String, lines: List[Line]): Option[Line] = {
+    lines match {
+      case Nil => None
+      case head :: rest => if (id.compare(head.id) == 0){
+                             Some(head)
+                           } else {
+                             idToLine(id,rest)
+      }
+    }
   }
 }
