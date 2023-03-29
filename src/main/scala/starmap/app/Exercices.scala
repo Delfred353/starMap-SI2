@@ -519,7 +519,7 @@ object ExosRoutes {
       case (None,None) => None
       case (_,None) => None
       case (None,_) => None
-      case (Some(stopDebut),Some(stopFin)) => if (ligneCommune(stopDebut,stopFin).length ! = 0){
+      case (Some(stopDebut),Some(stopFin)) => if (listIdBonSensBus.length != 0){
                                                 Some(Bus(arretDebutBus,End))
       }
     }
@@ -557,19 +557,33 @@ object ExosRoutes {
    
   }
 
+/**@param stop1 un Stop
+  *@param stop2 un autre Stop
+  *@return une liste avec les id des lignes qui passent à la fois par stop1 et stop2
   def ligneCommune(stop1: Stop, stop2: Stop):List[String] = {
     stop1.lineId.map((e:String) => stop2.lineId.contains(e))
   }
 
-  def idSensBus(stopDepart: Stop, stopArrivee: Stop): List[String] = {
+/**@param stopDepart un Stop
+  *@param stopArrivee un Stop
+  *@return liste des bus allant de stopDepart a stopArrivee (dans ce sens)
+  */
+  def listIdBonSensBus(stopDepart: Stop, stopArrivee: Stop): List[String] = {
      val idLignesPossibles: List[String] = ligneCommune(stopDepart,stopArrivee).map()
-     val lignesPossibles: List[Option[Line]] = idLignesPossibles.map(idToLine())
+     val optionLignesPossibles: List[Option[Line]] = idLignesPossibles.map(idToLine())
+     val lignesPossibles: List[Line] = filtreOption(optionLignesPossibles).map((x:Line)=> IsEnPremier(stopDepart,stopArrivee,x.stops))
+     lignesPossibles.map((x:Line) => x.id)
   }
-  
+  /**@param id l'identifiant d'une ligne
+    *@return la ligne correspondant a id si elle existe dans allLines
   def idToLine(id:String): Option[Line] = {
    idSearchLine(id,allLines)
   }
 
+/**@param id l'identifiant d'une ligne
+  *@param lines une liste de Line
+  *@return la ligne correspondant à id de la liste lines si elle est dedans
+  */
   def idSearchLine(id: String, lines: List[Line]): Option[Line] = {
     lines match {
       case Nil => None
@@ -577,6 +591,37 @@ object ExosRoutes {
                              Some(head)
                            } else {
                              idToLine(id,rest)
+      }
+    }
+  }
+
+/**@param enPremier un Stop
+  *@param enSecond un Stop
+  *@param ligne une liste de Stop
+  *@return vrai ssi enPremier est avant enSecond dans la liste ligne
+  */
+  def IsEnPremier(enPremier: Stop, enSecond: Stop, ligne: List[Stop]): Boolean = {
+    ligne match {
+      case Nil => false
+      case head :: rest => if (head == enPremier && ligne.contains(enSecond)){
+        true
+      } else if (head == enSecond) {
+        false
+      } else {
+        IsEnPremier(enPremier,enSecond,rest)
+      }
+    }
+  }
+
+/**@param listO une liste d'Option[Line]
+  *@return une liste d'elements de listO qui ne valent pas None et sans l'Option
+  */
+  def filtreOption(listO: List[Option[Line]]):List[Line] = {
+    listO match {
+      case Nil => Nil
+      case head :: rest => head match {
+        case None => filtreOption(rest)
+        case Some(l)=> l :: filtreOption(rest)
       }
     }
   }
