@@ -45,6 +45,7 @@ import starmap.app.ExosLignes.overlayLignes
 import starmap.app.ExosOverlays.concatOverlay
 import starmap.app.ExosArrets.overlayStops
 
+
 /** Lignes et arrêts de bus, obtenus à partir des fichiers csv fournis. */
 val (allLines, allStops): (List[Line], List[Stop]) = CSV.buildLinesAndStops()
 
@@ -511,5 +512,46 @@ object ExosRoutes {
    * @note
    *   Bien lire les conseils donnés dans l'énoncé accompagnant ce projet.
    */
-  def searchItin(start: Geo, end: Geo): Option[Route] = ??? // TODO
+  def searchItin(start: Geo, end: Geo): Option[Route] = {
+    val arretDebutBus: Option[Stop] = closestStopOfAll(start,allStops)
+    val arretFinBus: Option[Stop] = closestStopOfAll(end,allStops)
+    (arretDebutBus,arretFinBus) match {
+      case (None,None) => None
+      case (_,None) => None
+      case (None,_) => None
+      case (Some(stopDebut),Some(stopFin)) =>
+    }
+  } // TODO
+
+  /**@param pos une position 
+    *@param arrets une liste de Stop 
+    *@return le Stop de la liste arrets le plus proche de pos s'il existe
+    */
+  def closestStopOfAll(pos : Geo, arrets: List[Stop]): Option[Stop] = {
+    arrets match {
+      case Nil => None
+      case stop1 :: suite => closestOfTwo(stop1,closestStopOfAll(pos,suite))
+    }
+  }
+
+  /** @param pos la position dont on cherche quel est l'arret le plus proche
+    * @param stop1 un Stop
+    * @param stop2 un autre Stop
+    * @return Le Stop le plus proche de pos entre stop1 et stop2 s'ils existent
+    */
+  def closestOfTwo(pos : Geo, stop1 : Option[Stop], stop2: Option[Stop]): Option[Stop] = {
+    (stop1,stop2) match {
+      case (None,None) => None
+      case (s1,None) => s1
+      case (None,s2) => s2
+      case (s1,s2) =>  val d1: Double = Util.vincenty(pos,s1.coord)
+                       val d2: Double = Util.vincenty(pos,s2.coord)
+                       if (d1 <= d2){
+                         s1
+                       } else {
+                         s2
+                       }
+    }
+   
+  }
 }
