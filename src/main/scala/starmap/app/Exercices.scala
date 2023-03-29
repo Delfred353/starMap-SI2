@@ -563,7 +563,7 @@ object ExosRoutes {
   def ligneCommune(stop1: Stop, stop2: Stop):List[String] = {
     stop1.lineId.map((e:String) => stop2.lineId.contains(e))
   }
-
+.
 /**@param stopDepart un Stop
   *@param stopArrivee un Stop
   *@return liste des bus allant de stopDepart a stopArrivee (dans ce sens)
